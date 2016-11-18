@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <script>
+        /*移动适配*/
+        var desW = 640;
+        var winW = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = winW / desW * 100 + "px";
+    </script>
+</head>
+<body>
+<section class="main">
+    <div class="music">
+        <audio src="audio/bgm.mp3" loop preload="none" id="bgm"></audio>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1" id="page1">
+                <img src="img/jianlis.png" alt="" id="jl">
+                <img src="img/gogl.png" id="logo">
+                <img src="img/touxiang.png" alt="">
+                <span id="web">Web 前端</span>
+                <span id="name"></span>
+            </div>
+            <div class="swiper-slide slide2">
+                <div></div>
+                <span class="headPic"></span>
+                <span class="sex"></span>
+                <ul>
+                    <li>姓名：张运涛</li>
+                    <li>性别：男</li>
+                    <li>毕业院校：河北工程大学</li>
+                    <li>求职意向：Web前端</li>
+                    <li>QQ：253556625</li>
+                    <li>TEL：15097631280</li>
+                </ul>
+            </div>
+            <div class="swiper-slide slide3">
+                <img src="img/jineng.png" alt="">
+                <ul>
+                    <li>原生JS<b><span>75%</span></b></li>
+                    <li>html&css<b><span>80%</span></b></li>
+                    <li>node.js<b><span>40%</span></b></li>
+                    <li>H5&移动端<b><span>60%</span></b></li>
+                    <li>AJAX/JsonP<b><span>70%</span></b></li>
+                    <li>jQuery <b><span>80%</span></b></li>
+                    <li>AngularJS<b><span>40%</span></b></li>
+                    <li>React<b><span>45%</span></b></li>
+                    <li>MongoDB<b><span>80%</span></b></li>
+                </ul>
+            </div>
+            <div class="swiper-slide slide4">
+                <img src="img/jignyan.png" alt="">
+                <ul>
+                    <li>CRM客户管理系统简易版</li>
+                    <li>(HTML/CSS/JS/AJAX/HTTP)<span></span></li>
+                    <li><span></span>腾讯体育看比赛手机app</li>
+                    <li>(H5/LESS/JQuery/JsonP)</li>
+                    <li>腾讯体育看比赛首页</li>
+                    <li>(HTML/CSS/JS/JsonP)<span></span></li>
+                    <li><span></span>DOM库/AJAX库(等)</li>
+                    <li>(仿JQuery封装的库)</li>
+                </ul>
+            </div>
+            <div class="swiper-slide slide5">
+                <span>我来啦~~~</span>
+                <div>
+                    <img src="img/chat.png" alt="">
+                    <b>精彩人生即将开始，<br>请为我转身..</b>
+                </div>
+                <div>
+                    <img src="img/chat.png" alt="">
+                    <b>我是最棒的</b>
+                </div>
+                <img src="img/touxiang1.png" alt="">
+            </div>
+            <div class="swiper-slide slide6">
+                <p>张运涛的个人简历</p>
+                <p>放弃 is not defined</p>
+                <img src="img/erweima.png" alt="">
+                <p>By丶张运涛</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/typewrite.js"></script>
+<script>
+    var oLogo = document.getElementById('logo'),
+        oWeb = document.getElementById('web');
+    var oJlHeight = winW * .595,
+        oLogoH = oLogo.offsetHeight
+    oLogo.style.top = oWeb.style.top = oJlHeight - oLogoH - 5 + 'px';
+
+</script>
+<script>
+    var mySwiper = new Swiper(".swiper-container", {
+        direction: "vertical",
+        loop: true,
+        onTransitionEnd: function (swiper) {
+            var slides = swiper.slides;
+            var curIndex = swiper.activeIndex;
+            var lastIndexSlide = slides.length - 1;
+            var trueIndexSlide = slides.length - 2;
+            [].forEach.call(slides, function (item, index) {
+                item.id = "";
+                if (curIndex == index) {
+                    switch (index) {
+                        case 0:
+                            item.id = "page" + trueIndexSlide;
+                            break;
+                        case lastIndexSlide:
+                            item.id = "page1";
+                            break;
+                        default:
+                            item.id = "page" + curIndex;
+                    }
+                }
+            })
+        }
+    })
+
+    var music = document.querySelector(".music");
+    var beyond = document.querySelector("#bgm");
+    window.setTimeout(function () {
+        beyond.play();
+        beyond.addEventListener("canplay", function () {
+            music.className = "music musicCur";
+        })
+    }, 1000)
+    music.addEventListener("click", function () {
+        if (beyond.paused) {
+            beyond.play();
+            music.className = "music musicCur";
+        } else {
+            beyond.pause();
+            music.className = "music";
+            music.style.opacity = 1;
+        }
+    }, false)
+</script>
+</body>
+</html>
