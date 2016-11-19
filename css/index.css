@@ -10,17 +10,20 @@ html, body, .main {
 }
 
 .slide1 {
+    opacity: 0;
     position: relative;
     background: lightgreen;
     background-size: 100% 100%;
 }
 
 .slide2 {
+    opacity: 0;
     background-size: 100% 100%;
     background: wheat;
     position: relative;
 }
 .slide3{
+    opacity: 0;
     background-size: 100% 100%;
     background: lightskyblue;
     position: relative;
@@ -182,6 +185,7 @@ html, body, .main {
     background: greenyellow;
 }
 .slide4{
+    opacity: 0;
     background-size: 100% 100%;
     background: greenyellow;
     position: relative;
@@ -257,6 +261,7 @@ margin-top: 1.5rem;
     margin: 0 auto;
 }
 .slide5{
+    opacity: 0;
     background-size: 100% 100%;
     background:lightgreen;
     position: relative;
@@ -295,6 +300,9 @@ position: absolute;
     left: 50%;
 }
 
+#page1{
+    opacity: 1;
+}
 
 #page1 span:nth-of-type(1) {
     -webkit-animation: zoomIn 1s .6s both;
@@ -319,7 +327,9 @@ position: absolute;
 
 }
 
-
+#page2{
+    opacity: 1;
+}
 #page2 div{
     -webkit-animation: fadeInDown 1s 0s both;
     animation: fadeInDown 1s 0s both;
@@ -359,6 +369,10 @@ position: absolute;
     -webkit-animation: lightSpeedIn 1.8s 0.9s both;
     animation: lightSpeedIn 1.8s 0.9s both;
 }
+
+#page3{
+    opacity: 1;
+}
 #page3 img,#page4 img{
     -webkit-animation: rubberBand 1.5s 1s infinite ease-in-out both;
     animation: rubberBand 1.5s 1s infinite ease-in-out both;
@@ -380,7 +394,7 @@ position: absolute;
     animation: rotateInUpLeft 1.2s 1.2s ease-in-out both;
 }
 #page3 ul li:nth-child(5) b{
-    -webkit-animation: rotateInUpLeft 1.2s 1.2s ease-in-out both;
+    -webkit-animation: rotateInUpLeft 1.2s 1.5s ease-in-out both;
     animation: rotateInUpLeft 1.2s 1.5s ease-in-out both;
 }
 #page3 ul li:nth-child(6) b{
@@ -399,7 +413,9 @@ position: absolute;
     -webkit-animation: rotateInUpLeft 1.2s 2.7s ease-in-out both;
     animation: rotateInUpLeft 1.2s 2.7s ease-in-out both;
 }
-
+#page4{
+    opacity: 1;
+}
 #page4 li:nth-child(1){
     -webkit-animation: zoomInRight .8s 0.9s both;
     animation: zoomInRight .8s 0.9s both;
@@ -431,6 +447,9 @@ position: absolute;
 #page4 li:nth-child(8){
     -webkit-animation: zoomInLeft 1.8s 0.9s both;
     animation: zoomInLeft 1.8s 0.9s both;
+}
+#page5{
+    opacity: 1;
 }
 #page5 div:nth-of-type(1){
     -webkit-animation: zoomIn .3s 0.9s both;
