@@ -336,8 +336,8 @@ position: absolute;
 }
 
 #page2 .headPic {
-    -webkit-animation: move 1.5s infinite ease-in-out .3s both;
-    animation: move 1.5s infinite ease-in-out .3s both;
+    -webkit-animation: move 1.5s 2 ease-in-out .3s both;
+    animation: move 1.5s 2 ease-in-out .3s both;
 }
 
 #page2 ul {
