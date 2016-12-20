@@ -181,7 +181,7 @@ html, body, .main {
     background: palevioletred
 }
 .slide3 ul li:nth-child(9) b:after{
-    width: 80%;
+    width: 40%;
     background: greenyellow;
 }
 .slide4{
